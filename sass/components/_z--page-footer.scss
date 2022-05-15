@@ -1,0 +1,192 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: $Primary-Background-Color;
+}
+
+.footer__container {
+    @extend .container;
+    @extend .items-in-row;
+    align-items: baseline;
+}
+
+.logo__link--footer {
+    @extend .default-links;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.address {
+    @extend .default-lists;
+}
+
+.address__item {
+    margin-bottom: 9px;
+    
+    &:last-child {
+            margin-bottom: 0;
+        }
+}
+
+.address__postal {
+    font-style: normal;
+    color: $Contrast-Text-Color;
+}
+
+.address__mailtel {
+    @extend .default-links;
+    font-style: normal;
+    color: $Footer-Contacts-Text-Color;
+    text-decoration: none;
+    
+    transition-property: color;
+    transition-duration: $Animation-Duration;
+    transition-timing-function: $Timing-Function;
+
+    &:hover, &:focus {
+            color: $Active-Link-Color;
+        }
+}
+
+.social-links {
+    display: inline-block;
+        margin-left: 70px;
+}
+// .pagefoot .social-links {
+//     display: inline-block;
+//     margin-left: 70px;
+// }
+
+.social-links__action {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    
+    margin-bottom: 20px;
+}
+// .pagefoot .title {
+//     text-transform: uppercase;
+//     color: #FFFFFF;
+//     font-size: 14px;
+//     font-weight: bold;
+
+//     margin-bottom: 20px;
+// }
+
+.link-box {
+    @extend .default-lists;
+    @extend .items-in-row;
+}
+
+.link-box__item {
+    margin-right: 10px;
+    margin-bottom: 0px;
+    width: 44px;
+    height: 44px;
+
+    &:last-child {
+            margin-right: 0px;
+        }
+
+    background-color: rgba(255, 255, 255, 0.1);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: $Animation-Duration;
+    transition-timing-function: $Timing-Function;
+    
+    &:hover, &:focus {
+        background-color: $Active-Link-Color;
+    }
+}
+
+.icon-insta {
+    background-image: url("../images/instagram-footer.svg");
+}
+
+.icon-twit {
+    background-image: url("../images/twitter-footer.svg");
+}
+
+.icon-fb {
+    background-image: url("../images/facebook-footer.svg");
+}
+
+.icon-lin {
+    background-image: url("../images/linkedin-footer.svg");
+}
+
+
+.signup {
+    margin-left: auto;
+}
+
+.signup__action {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    color: $Contrast-Text-Color;
+}
+
+.signup__input {
+    margin: 0;
+    padding: 15px 16px 15px 16px;
+    width: 358px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+    color: rgba(255, 255, 255, 0.6);
+    background-color: $Primary-Background-Color;
+
+    &:focus {
+            outline: 0;
+        }
+
+}
+
+.signup__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    padding: 10px 0px 10px 0px;
+    margin-left: 12px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+
+    color: $Contrast-Text-Color;
+    background-color: $Active-Link-Color;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+
+    cursor: pointer;
+
+    &::after {
+            content: "";
+    
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            background-image: url("../images/icon-send.svg");
+            background-size: contain;
+        }
+
+}

@@ -1,0 +1,51 @@
+/* стилизация секции "Наши преимущества" */
+
+.advantages {
+    @extend .default-lists;
+    @extend .items-in-row;
+}
+
+.advantages__subtitle {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: $Default-Text-Color;
+}
+
+.advantages__item {
+    p {width: 270px;}
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        height: 120px;
+    
+        background-color: #F5F4FA;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.advantages__icon {
+    &--antenna::before {
+            background-image: url("../images/antenna.svg");
+        }
+    &--clock::before {
+        background-image: url("../images/clock.svg");
+    }
+
+    &--diagram::before {
+        background-image: url("../images/diagram.svg");
+    }
+
+    &--astronaut::before {
+            background-image: url("../images/astronaut.svg");
+        }
+}
