@@ -1,40 +1,48 @@
-/* стилизация секции hero. hero-title и hero-button должны иметь общий фон*/
 .hero {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    @extend .container;
+    padding-top: 118px;
+    padding-bottom: 118px;
 
-    background-color: rgba(196, 196, 196, 1);
+    max-width: 479px;
+    height: 400px;
+    background-color: #ffff;
     background-image:
         linear-gradient(to right,
             rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),
-        url('../images/hero-team_opt.jpg');
+        url('/images/hero-team-mobile.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    max-width: 1600px;
-    height: 600px;
+    
     margin: 0 auto;
-
-
     text-align: center;
 }
 
-/*стилизация основного заголовка*/
+@media  (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            .hero {
+                background-image:
+                        linear-gradient(to right,
+                            rgba(47, 48, 58, 0.4),
+                            rgba(47, 48, 58, 0.4)),
+                        url('/images/hero-team-mobile@2x.jpg');
+            }
+}
+
 .hero__title {
     margin: 0px auto 30px auto;
-    width: 696px;
+    width: 360px;
 
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 42px;
     color: $Contrast-Text-Color;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
-/* Кнопка index */
-/* button не наследуется из body */
 .hero__button {
     padding: 10px 32px 10px 32px;
 
@@ -45,10 +53,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    line-height: 1.88;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    line-height: 30px;
     letter-spacing: 0.06em;
     color: $Contrast-Text-Color;
     background-color: $Active-Link-Color;
@@ -65,5 +70,4 @@
     &:hover, &:focus {
         background-color: rgba(24, 140, 232, 1);
     }
-
 }

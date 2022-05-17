@@ -1,136 +1,281 @@
-.header {
-    @extend .container;
-    @extend .items-in-row;
-}
-
 .header__decor {
     border-bottom: $Header-Bottom-Border solid #ECECEC;
 }
 
-/*стилизация логотипа компании*/
-
-.logo__link--header {
-    padding-top: 24px;
-    padding-bottom: 25px;
-    text-decoration: none;
+.header {
+    position: relative;
+    @extend .container;
+    @extend .items-in-row;
 }
-
-/*стилизация навигации и контактов*/
 
 .navigation-section {
     display: flex;
     align-items: center;
-}
 
-.nav {
-    display: flex;
-
-    list-style: none;
-        margin: 0px;
-        padding: 0px;
     
-        &__item:first-child {
-            margin-left: 93px;
-        }
-        
-        &__item:not(:last-child) {
-            margin-right: 50px;
+}
+
+.menu-container {
+    display: none;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    background-color: #FFFFFF;
+    padding: 48px 40px 48px 40px;
+    
+    &.is-open {
+        display: block;
+    }
+
+        outline: 1px solid red;
+}
+
+.menu-button {
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    right: 15px;
+
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+        &:hover, &:focus {
+            fill: $Active-Link-Color;
         }
 }
 
-.nav__link {
+.menu-button__icon--close {
+    display: none;
+}
+
+.menu-button.is-open .menu-button__icon--close {
     display: block;
-    
-    padding-top: 32px;
-    padding-bottom: 32px;
-    
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+  
+}
+
+.menu-button.is-open .menu-button__icon--open {
+    display: none;
+}
+
+.logo__link--header {
+    display: block;
+    padding-top: 16px;
+    padding-bottom: 16px;
     text-decoration: none;
-    color: $Default-Text-Color;
-    letter-spacing: 0.02em;
+}
 
-    transition-property: color;
-    transition-duration: $Animation-Duration;
-    transition-timing-function: $Timing-Function;
-
-    &:hover, &:focus {
-        color: $Active-Link-Color;
+.site-nav {
+    @extend .default-lists;
+    &__item:not(:last-child) {
+        margin-bottom: 32px;
     }
 }
 
-.nav__link--active {
-    @extend .nav__link;
-    
-    position: relative;
+.site-nav__link {
+    @extend .default-links;
+
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.02em;
+}
+
+.site-nav__link--active {
+    @extend .default-links;
+    @extend .site-nav__link;
     color: $Active-Link-Color;
+}
 
-    &:after {
-            content: "";
-    
-            position: absolute;
-            bottom: calc(-1*#{$Header-Bottom-Border});
-            right: 0;
-    
-            width: 100%;
-            height: 4px;
-            background-color: $Active-Link-Color;
-            border-radius: 2px;
-            border: none;
-    
+.contacts-mobile {
+    @extend .default-lists;
+    margin-top: 302px;
+
+    &__item:not(:last-child) {
+            margin-bottom: 32px;
         }
+    margin-bottom: 64px;
 }
 
-.nav__link--contacts {
-    @extend .nav__link;
-    
-    display: inline-flex;
-    align-items: center;
+.contacts__link--phone {
+    @extend .default-links;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    color: $Active-Link-Color;
+}
 
+.contacts__link--mail {
+    @extend .default-links;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
     color: $Primary-Text-Color;
-
 }
 
-%nav__icon {
-    fill: $Primary-Text-Color;
+.slinkbox-mobile {
+    @extend .default-lists;
+    @extend .items-in-row;
 
-    transition-property: fill;
-    transition-duration: $Animation-Duration;
-    transition-timing-function: $Timing-Function;
+    &__item:not(:last-child) {
+        position: relative;
+        margin-right: 20px;
+
+        &:after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            
+            width: 1px;
+            height: 100%;
+            background-color: rgba(33, 33, 33, 0.2);
+            border: none;
+        }
+    }
 }
 
-.nav__icon--mail {
-        @extend %nav__icon;
-        width: 16px;
-        height: 12px;
-        margin-right: 10px;
+.slinkbox-mobile__link {
+    @extend .default-links;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+
+    color: $Active-Link-Color;
+}
+
+
+
+
+
+
+
+
+
+
+/*стилизация навигации и контактов*/
+
+// .site-nav {
+//     // display: flex;
+
+//     @extend .default-lists;
+    
+//         &__item:not(:last-child) {
+//             margin-bottom: 32px;
+//         }
+//         // &__item:first-child {
+//         //     margin-left: 93px;
+//         // }
+        
+//         // &__item:not(:last-child) {
+//         //     margin-right: 50px;
+//         // }
+// }
+
+// .site-nav__link {
+//     display: block;
+    
+//     // padding-top: 32px;
+//     // padding-bottom: 32px;
+    
+//     font-weight: 500;
+//     font-size: 40px;
+//     line-height: 47px;
+//     text-decoration: none;
+//     color: $Default-Text-Color;
+//     letter-spacing: 0.02em;
+
+//     transition-property: color;
+//     transition-duration: $Animation-Duration;
+//     transition-timing-function: $Timing-Function;
+
+//     &:hover, &:focus {
+//         color: $Active-Link-Color;
+//     }
+// }
+
+// .site-nav__link--active {
+//     @extend .nav__link;
+    
+//     // position: relative;
+//     color: $Active-Link-Color;
+
+//     // &:after {
+//     //         content: "";
+    
+//     //         position: absolute;
+//     //         bottom: calc(-1*#{$Header-Bottom-Border});
+//     //         right: 0;
+    
+//     //         width: 100%;
+//     //         height: 4px;
+//     //         background-color: $Active-Link-Color;
+//     //         border-radius: 2px;
+//     //         border: none;
+    
+//     //     }
+// }
+
+// .site-nav__link--contacts {
+//     @extend .nav__link;
+    
+//     display: inline-flex;
+//     align-items: center;
+
+//     color: $Primary-Text-Color;
+
+// }
+
+// %nav__icon {
+//     fill: $Primary-Text-Color;
+
+//     transition-property: fill;
+//     transition-duration: $Animation-Duration;
+//     transition-timing-function: $Timing-Function;
+// }
+
+// .site-nav__icon--mail {
+//         @extend %nav__icon;
+//         width: 16px;
+//         height: 12px;
+//         margin-right: 10px;
         
         
-}
+// }
 
-.nav__icon--phone {
-        @extend %nav__icon;
-        width: 10px;
-        height: 16px;
-        margin-right: 10px;
-}
+// .site-nav__icon--phone {
+//         @extend %nav__icon;
+//         width: 10px;
+//         height: 16px;
+//         margin-right: 10px;
+// }
 
-.nav__link--contacts:hover, 
-.nav__link--contacts:focus {
-    .nav__icon--mail, 
-    .nav__icon--phone {
-        fill: $Active-Link-Color;
-    }   
-}
+// .site-nav__link--contacts:hover, 
+// .site-nav__link--contacts:focus {
+//     .site-nav__icon--mail, 
+//     .site-nav__icon--phone {
+//         fill: $Active-Link-Color;
+//     }   
+// }
 
-.contacts-section {
-    margin-left: auto;
-}
+// .contacts {
+//     margin-left: auto;
+// }
 
-.nav__item--contacts + .nav__item--contacts {
-    margin-left: 50px;
-}
+// .site-nav__item--contacts + .site-nav__item--contacts {
+//     margin-left: 50px;
+// }
 
 
 

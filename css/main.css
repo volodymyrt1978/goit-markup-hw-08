@@ -29,25 +29,38 @@ p {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 /* центрирование контента */
-.container, .header, .footer__container {
-  width: 1200px;
+.container, .header, .hero, .footer__container {
+  width: 480px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  outline: 1px solid red;
 }
 
-/* ------- */
+@media screen and (min-width: 768px) {
+  .container, .header, .hero, .footer__container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container, .header, .hero, .footer__container {
+    width: 1200px;
+  }
+}
+
 .section, .teamsection {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* убираем маркеры в списках*/
-.default-lists, .advantages, .application, .team, .nets, .clients, .button-list, .projects, .address, .link-box {
+.default-lists, .site-nav, .contacts-mobile, .slinkbox-mobile, .advantages, .application, .team, .nets, .clients, .button-list, .projects, .address, .link-box {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -55,14 +68,14 @@ img {
 
 /* ------- */
 /* убираем подчеркивание в ссылках */
-.default-links, .link-active, .logo__link--footer, .address__mailtel {
+.default-links, .site-nav__link, .site-nav__link--active, .contacts__link--phone, .contacts__link--mail, .slinkbox-mobile__link, .link-active, .logo__link--footer, .address__mailtel {
   color: #212121;
   text-decoration: none;
 }
 
 /* ------- */
 /* утилита для построения в ряд */
-.items-in-row, .header, .advantages, .nets, .clients, .button-list, .footer__container, .link-box {
+.items-in-row, .header, .slinkbox-mobile, .nets, .clients, .button-list, .footer__container, .link-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,8 +101,16 @@ body {
 .logo, .logo__start, .logo__end--dark, .logo__end--bright {
   font-family: Raleway, sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (min-width: 1200px) {
+  .logo, .logo__start, .logo__end--dark, .logo__end--bright {
+    font-size: 26px;
+    line-height: 31px;
+  }
 }
 
 .logo__start {
@@ -108,14 +129,10 @@ body {
   border-bottom: 1px solid #ECECEC;
 }
 
-/*стилизация логотипа компании*/
-.logo__link--header {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  text-decoration: none;
+.header {
+  position: relative;
 }
 
-/*стилизация навигации и контактов*/
 .navigation-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,139 +142,157 @@ body {
           align-items: center;
 }
 
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.nav__item:first-child {
-  margin-left: 93px;
-}
-
-.nav__item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.nav__link, .nav__link--active, .nav__link--contacts {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  text-decoration: none;
-  color: #212121;
-  letter-spacing: 0.02em;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav__link:hover, .nav__link--active:hover, .nav__link--contacts:hover, .nav__link:focus, .nav__link--active:focus, .nav__link--contacts:focus {
-  color: #2196f3;
-}
-
-.nav__link--active {
-  position: relative;
-  color: #2196f3;
-}
-
-.nav__link--active:after {
-  content: "";
+.menu-container {
+  display: none;
   position: absolute;
-  bottom: calc(-1*1px);
-  right: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 4px;
-  background-color: #2196f3;
-  border-radius: 2px;
-  border: none;
+  background-color: #FFFFFF;
+  padding: 48px 40px 48px 40px;
+  outline: 1px solid red;
 }
 
-.nav__link--contacts {
+.menu-container.is-open {
+  display: block;
+}
+
+.menu-button {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  right: 15px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #757575;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
 
-.nav__icon--mail, .nav__icon--phone {
-  fill: #757575;
-  -webkit-transition-property: fill;
-  transition-property: fill;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav__icon--mail {
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-}
-
-.nav__icon--phone {
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-}
-
-.nav__link--contacts:hover .nav__icon--mail,
-.nav__link--contacts:hover .nav__icon--phone,
-.nav__link--contacts:focus .nav__icon--mail,
-.nav__link--contacts:focus .nav__icon--phone {
+.menu-button:hover, .menu-button:focus {
   fill: #2196f3;
 }
 
-.contacts-section {
-  margin-left: auto;
+.menu-button__icon--close {
+  display: none;
 }
 
-.nav__item--contacts + .nav__item--contacts {
-  margin-left: 50px;
+.menu-button.is-open .menu-button__icon--close {
+  display: block;
 }
 
-/* стилизация секции hero. hero-title и hero-button должны иметь общий фон*/
+.menu-button.is-open .menu-button__icon--open {
+  display: none;
+}
+
+.logo__link--header {
+  display: block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-decoration: none;
+}
+
+.site-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.site-nav__link, .site-nav__link--active {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+}
+
+.site-nav__link--active {
+  color: #2196f3;
+}
+
+.contacts-mobile {
+  margin-top: 302px;
+  margin-bottom: 64px;
+}
+
+.contacts-mobile__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.contacts__link--phone {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+.contacts__link--mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+.slinkbox-mobile__item:not(:last-child) {
+  position: relative;
+  margin-right: 20px;
+}
+
+.slinkbox-mobile__item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(33, 33, 33, 0.2);
+  border: none;
+}
+
+.slinkbox-mobile__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+/*стилизация навигации и контактов*/
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  background-color: #c4c4c4;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/hero-team_opt.jpg");
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-team_opt.jpg");
+  padding-top: 118px;
+  padding-bottom: 118px;
+  max-width: 479px;
+  height: 400px;
+  background-color: #ffff;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("/images/hero-team-mobile.jpg");
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("/images/hero-team-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 1600px;
-  height: 600px;
   margin: 0 auto;
   text-align: center;
 }
 
-/*стилизация основного заголовка*/
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("/images/hero-team-mobile@2x.jpg");
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("/images/hero-team-mobile@2x.jpg");
+  }
+}
+
 .hero__title {
   margin: 0px auto 30px auto;
-  width: 696px;
+  width: 360px;
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 42px;
   color: white;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-/* Кнопка index */
-/* button не наследуется из body */
 .hero__button {
   padding: 10px 32px 10px 32px;
   margin-left: auto;
@@ -266,14 +301,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.88;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
+  line-height: 30px;
   letter-spacing: 0.06em;
   color: white;
   background-color: #2196f3;
@@ -618,16 +646,13 @@ body {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
   color: #212121;
 }
 
-.advantages__item p {
-  width: 270px;
-}
-
 .advantages__item:not(:last-child) {
-  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 .advantages__item::before {
