@@ -17,7 +17,6 @@
 
 .menu-container {
     display: none;
-
     position: absolute;
     z-index: 1;
     top: 0;
@@ -99,7 +98,7 @@
     flex-direction: column-reverse;
     margin-top: 302px;
     margin-bottom: 64px;
-    
+
     &__item:not(:first-child) {
             margin-bottom: 32px;
         }
