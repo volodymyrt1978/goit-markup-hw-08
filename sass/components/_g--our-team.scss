@@ -6,35 +6,38 @@
 
 .team {
     @extend .default-lists;
-    display: flex;
-    margin-top: $Indent-Title-Gap;
+    
+    margin-top: $Indent-Mobile-Title-Gap;
 }
 
 .team__item {
-    flex-basis: calc(100%/4);
-    margin-left: $Projects-Item-Gap;
-
+    
     background-color: $Default-Background-Color;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
-    &:first-child {
-            margin-left: 0;
+    &:not(:last-child) {
+            margin-bottom: 30px;
         }
+}
+
+.team__image {
+    width: 450px;
+    height: 460px;
 }
 
 .card {
     padding-top: $Projects-Item-Gap;
-    padding-bottom: $Projects-Item-Gap;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-bottom: 24px;
+    // padding-left: 32px;
+    // padding-right: 32px;
 }
 
 %card-text {
     font-size: 16px;
-        line-height: 1.19;
+        line-height: 19px;
         text-align: center;
 }
 
@@ -53,6 +56,7 @@
 .nets {
     @extend .default-lists;
     @extend .items-in-row;
+    justify-content: center;
 }
 
 .nets__item {
@@ -72,19 +76,9 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    cursor: pointer;
-
+    
     color: #AFB1B8;
 
-    transition-property: color, background-color;
-    transition-duration: $Animation-Duration;
-    transition-timing-function: $Timing-Function;
-
-    &:hover, &:focus {
-        color: $Contrast-Text-Color;
-        background-color: $Active-Link-Color;
-    }
-   
 }
 
 .nets__icon {

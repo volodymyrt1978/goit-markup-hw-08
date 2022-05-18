@@ -92,9 +92,10 @@ body {
 }
 
 .section__title {
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 33px;
   text-align: center;
+  letter-spacing: 0.03em;
   color: #212121;
 }
 
@@ -645,9 +646,10 @@ body {
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 14px;
-  line-height: 1.14;
+  line-height: 16px;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: #212121;
 }
 
@@ -681,6 +683,7 @@ body {
 }
 
 .services {
+  display: none;
   padding-top: 0;
 }
 
@@ -726,36 +729,33 @@ body {
 }
 
 .team {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .team__item {
-  -ms-flex-preferred-size: calc(100%/4);
-      flex-basis: calc(100%/4);
-  margin-left: 30px;
   background-color: white;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.team__item:first-child {
-  margin-left: 0;
+.team__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.team__image {
+  width: 450px;
+  height: 460px;
 }
 
 .card {
   padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-bottom: 24px;
 }
 
 .card__name, .card__profession {
   font-size: 16px;
-  line-height: 1.19;
+  line-height: 19px;
   text-align: center;
 }
 
@@ -767,6 +767,12 @@ body {
 
 .card__profession {
   margin-bottom: 16px;
+}
+
+.nets {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nets__item {
@@ -791,19 +797,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  cursor: pointer;
   color: #AFB1B8;
-  -webkit-transition-property: color, background-color;
-  transition-property: color, background-color;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nets__link:hover, .nets__link:focus {
-  color: white;
-  background-color: #2196f3;
 }
 
 .nets__icon {
