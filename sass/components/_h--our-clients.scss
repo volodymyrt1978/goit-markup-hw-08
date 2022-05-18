@@ -1,15 +1,17 @@
 .clients {
     @extend .default-lists; 
     @extend .items-in-row;
-    margin-top: 50px;
+    flex-wrap: wrap;
+   
+    margin-top: 30px;
+    margin-left: calc(-1 * #{$Projects-Item-Gap});
+    margin-bottom: calc(-1 * #{$Projects-Item-Gap});
 }
 
 .clients__item {
-    margin-right: 30px;
-
-    &:last-child {
-            margin-right: 0px;
-        }
+    flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+    margin-left: $Projects-Item-Gap;
+    margin-bottom: $Projects-Item-Gap;
 }
 
 .clients__link {
@@ -18,15 +20,14 @@
     align-content: center;
     justify-content: center;
 
-    width: 170px;
+    width: 210px;
     height: 92px;
 
     color: #AFB1B8;
 
     border: 1px solid currentColor;
     border-radius: 4px;
-    cursor: pointer;
-
+    
     transition-property: color;
     transition-duration: $Animation-Duration;
     transition-timing-function: $Timing-Function;

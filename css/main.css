@@ -807,15 +807,18 @@ body {
 }
 
 .clients {
-  margin-top: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: calc(-1 * 30px);
+  margin-bottom: calc(-1 * 30px);
 }
 
 .clients__item {
-  margin-right: 30px;
-}
-
-.clients__item:last-child {
-  margin-right: 0px;
+  -ms-flex-preferred-size: calc(100%/2 - 30px);
+      flex-basis: calc(100%/2 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
 .clients__link {
@@ -829,12 +832,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 170px;
+  width: 210px;
   height: 92px;
   color: #AFB1B8;
   border: 1px solid currentColor;
   border-radius: 4px;
-  cursor: pointer;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 250ms;
