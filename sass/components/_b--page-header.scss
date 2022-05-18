@@ -93,14 +93,17 @@
     color: $Active-Link-Color;
 }
 
-.contacts-mobile {
+.contacts {
     @extend .default-lists;
+    display: flex;
+    flex-direction: column-reverse;
     margin-top: 302px;
-
-    &__item:not(:last-child) {
+    margin-bottom: 64px;
+    
+    &__item:not(:first-child) {
             margin-bottom: 32px;
         }
-    margin-bottom: 64px;
+    
 }
 
 .contacts__link--phone {

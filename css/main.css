@@ -34,12 +34,17 @@ img {
 
 /* центрирование контента */
 .container, .header, .hero, .footer__container {
-  width: 480px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
   outline: 1px solid red;
+}
+
+@media screen and (min-width: 480px) {
+  .container, .header, .hero, .footer__container {
+    width: 480px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -60,7 +65,7 @@ img {
 }
 
 /* убираем маркеры в списках*/
-.default-lists, .site-nav, .contacts-mobile, .slinkbox-mobile, .advantages, .application, .team, .nets, .clients, .button-list, .projects, .address, .link-box {
+.default-lists, .site-nav, .contacts, .slinkbox-mobile, .advantages, .application, .team, .nets, .clients, .button-list, .projects, .address, .link-box {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -211,12 +216,19 @@ body {
   color: #2196f3;
 }
 
-.contacts-mobile {
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   margin-top: 302px;
   margin-bottom: 64px;
 }
 
-.contacts-mobile__item:not(:last-child) {
+.contacts__item:not(:first-child) {
   margin-bottom: 32px;
 }
 
@@ -860,14 +872,14 @@ body {
 }
 
 .button-list {
-  margin-bottom: 50px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .button-list__item:not(:last-child) {
   margin-right: 8px;
+  margin-bottom: 15px;
 }
 
 .filter-button {
@@ -880,7 +892,6 @@ body {
   text-align: center;
   color: #212121;
   background-color: #f5f4fa;
-  cursor: pointer;
   border: none;
   border-radius: 4px;
   -webkit-transition-property: color, background-color, -webkit-box-shadow;
@@ -901,24 +912,13 @@ body {
 }
 
 /* Стилизация секции "Наши проекты" */
-.projects {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: calc(-1 * 30px);
+.projects__item {
+  /*+ 6px если рамка у всей карточки*/
   /*- 6px если рамка у всей карточки*/
-  margin-top: calc(-1 * 30px);
 }
 
-.projects__item {
-  -ms-flex-preferred-size: calc(100%/3 - 30px);
-      flex-basis: calc(100%/3 - 30px);
-  /*+ 6px если рамка у всей карточки*/
-  margin-left: 30px;
-  /*- 6px если рамка у всей карточки*/
-  margin-top: 30px;
+.projects__item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .link-active {
@@ -943,13 +943,18 @@ body {
   overflow: hidden;
 }
 
+.project__image {
+  width: 450px;
+  height: 294px;
+}
+
 .project__slider {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 63px 24px 63px 24px;
+  padding: 77px 24px 77px 24px;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.03em;
@@ -985,7 +990,8 @@ body {
 
 .project__title {
   font-size: 18px;
-  line-height: 2;
+  font-weight: 700;
+  line-height: 36px;
   letter-spacing: 0.06em;
   color: #212121;
 }
@@ -993,7 +999,7 @@ body {
 .project__brief {
   margin-top: 4px;
   font-size: 16px;
-  line-height: 1.88;
+  line-height: 30px;
   color: #757575;
 }
 
