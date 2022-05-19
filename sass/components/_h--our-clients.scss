@@ -4,14 +4,19 @@
     flex-wrap: wrap;
    
     margin-top: 30px;
-    margin-left: calc(-1 * #{$Projects-Item-Gap});
+    margin-right: calc(-1 * #{$Projects-Item-Gap});
     margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+
 }
 
 .clients__item {
     flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
-    margin-left: $Projects-Item-Gap;
+    margin-right: $Projects-Item-Gap;
     margin-bottom: $Projects-Item-Gap;
+
+        @media screen and (min-width: $tablet) {
+            flex-basis: calc(100%/3 - #{$Projects-Item-Gap});
+        }
 }
 
 .clients__link {
@@ -34,6 +39,10 @@
 
     &:hover, &:focus {
             color: $Active-Link-Color;
+        }
+
+        @media screen and (min-width: $tablet) {
+            width: 226px;
         }
 }
 
