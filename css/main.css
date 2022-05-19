@@ -148,6 +148,12 @@ body {
           align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .navigation-section {
+    width: 100%;
+  }
+}
+
 .menu-container {
   display: none;
   position: absolute;
@@ -157,11 +163,25 @@ body {
   width: 100%;
   background-color: #FFFFFF;
   padding: 48px 40px 48px 40px;
-  outline: 1px solid red;
 }
 
 .menu-container.is-open {
   display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: static;
+    height: 100%;
+    margin-left: 88px;
+    padding: 0;
+  }
 }
 
 .menu-button {
@@ -194,6 +214,12 @@ body {
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
 .logo__link--header {
   display: block;
   padding-top: 16px;
@@ -201,8 +227,26 @@ body {
   text-decoration: none;
 }
 
+@media screen and (min-width: 768px) {
+  .logo__link--header {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
 .site-nav__item:not(:last-child) {
   margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .site-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .site-nav__item:not(:last-child) {
+    margin: 0 50px 0 0;
+  }
 }
 
 .site-nav__link, .site-nav__link--active {
@@ -214,6 +258,29 @@ body {
 
 .site-nav__link--active {
   color: #2196f3;
+}
+
+@media screen and (min-width: 768px) {
+  .site-nav__link, .site-nav__link--active {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .site-nav__link--active {
+    position: relative;
+  }
+  .site-nav__link--active:after {
+    content: "";
+    position: absolute;
+    bottom: calc(-1*1px);
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #2196f3;
+    border-radius: 2px;
+    border: none;
+  }
 }
 
 .contacts {
@@ -232,7 +299,25 @@ body {
   margin-bottom: 32px;
 }
 
+@media screen and (min-width: 768px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    margin: 0 0 0 84px;
+  }
+  .contacts__item:not(:first-child) {
+    margin: 10px 0 0 0;
+  }
+}
+
 .contacts__link--phone {
+  display: inline-block;
   font-weight: 500;
   font-size: 34px;
   line-height: 40px;
@@ -240,12 +325,62 @@ body {
   color: #2196f3;
 }
 
+@media screen and (min-width: 768px) {
+  .contacts__link--phone {
+    font-size: 12px;
+    line-height: 14px;
+    color: #757575;
+  }
+}
+
 .contacts__link--mail {
+  display: block;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 0.02em;
   color: #757575;
+}
+
+@media screen and (min-width: 768px) {
+  .contacts__link--mail {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.nav__icon--mail, .nav__icon--phone {
+  fill: #757575;
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__icon--mail {
+  width: 14px;
+  height: 10px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__icon--mail {
+    display: none;
+  }
+}
+
+.nav__icon--phone {
+  width: 10px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__icon--phone {
+    display: none;
+  }
 }
 
 .slinkbox-mobile__item:not(:last-child) {
@@ -272,15 +407,20 @@ body {
   color: #2196f3;
 }
 
-/*стилизация навигации и контактов*/
+@media screen and (min-width: 768px) {
+  .slinkbox-mobile {
+    display: none;
+  }
+}
+
 .hero {
   padding-top: 118px;
   padding-bottom: 118px;
   max-width: 479px;
   height: 400px;
   background-color: #ffff;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("/images/hero-team-mobile.jpg");
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("/images/hero-team-mobile.jpg");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("/images/hero-team_opt.jpg");
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("/images/hero-team_opt.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -912,11 +1052,6 @@ body {
 }
 
 /* Стилизация секции "Наши проекты" */
-.projects__item {
-  /*+ 6px если рамка у всей карточки*/
-  /*- 6px если рамка у всей карточки*/
-}
-
 .projects__item:not(:last-child) {
   margin-bottom: 30px;
 }

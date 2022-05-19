@@ -47,15 +47,8 @@
     // margin-top: calc(-1 * #{$Projects-Item-Gap});
 }
 
-.projects__item {
-    // flex-basis: calc(100%/3 - #{$Projects-Item-Gap});
-    /*+ 6px если рамка у всей карточки*/
-    // margin-left: $Projects-Item-Gap;
-    /*- 6px если рамка у всей карточки*/
-        &:not(:last-child) {
-            margin-bottom: $Projects-Item-Gap;
-        }
-    
+.projects__item:not(:last-child) {
+    margin-bottom: $Projects-Item-Gap;
 }
 
 .link-active {
