@@ -854,7 +854,6 @@ body {
 
 @media screen and (min-width: 768px) {
   .advantages__item {
-    width: 354px;
     -ms-flex-preferred-size: calc(100%/2 - 30px);
         flex-basis: calc(100%/2 - 30px);
     margin-right: 30px;
@@ -928,6 +927,18 @@ body {
   margin-top: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-right: calc(-1 * 30px);
+    margin-bottom: calc(-1 * 30px);
+  }
+}
+
 .team__item {
   background-color: white;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -939,9 +950,23 @@ body {
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .team__item {
+    -ms-flex-preferred-size: calc(100%/2 - 30px);
+        flex-basis: calc(100%/2 - 30px);
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
+
 .team__image {
   width: 450px;
-  height: 460px;
+}
+
+@media screen and (min-width: 768px) {
+  .team__image {
+    width: 354px;
+  }
 }
 
 .card {

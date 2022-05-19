@@ -8,6 +8,13 @@
     @extend .default-lists;
     
     margin-top: $Indent-Mobile-Title-Gap;
+
+        @media screen and (min-width: $tablet) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: calc(-1 * #{$Projects-Item-Gap});
+                margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+            }
 }
 
 .team__item {
@@ -21,18 +28,27 @@
     &:not(:last-child) {
             margin-bottom: 30px;
         }
+
+                @media screen and (min-width: $tablet) {
+                    flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+                    margin-right: $Projects-Item-Gap;
+                    margin-bottom: $Projects-Item-Gap;
+                }
 }
 
 .team__image {
     width: 450px;
-    height: 460px;
+    // height: 460px;
+
+        @media screen and (min-width: $tablet){
+            width: 354px;
+            // height: 374px;
+        }
 }
 
 .card {
     padding-top: $Projects-Item-Gap;
     padding-bottom: 24px;
-    // padding-left: 32px;
-    // padding-right: 32px;
 }
 
 %card-text {

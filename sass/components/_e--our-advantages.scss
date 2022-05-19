@@ -38,7 +38,6 @@
     }
 
         @media screen and (min-width: $tablet) {
-            width: 354px;
             flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
             margin-right: $Projects-Item-Gap;
             margin-bottom: $Projects-Item-Gap;
