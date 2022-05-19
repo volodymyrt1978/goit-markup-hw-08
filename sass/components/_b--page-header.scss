@@ -176,7 +176,7 @@
 
 .contacts__link--phone {
     @extend .default-links;
-    display: inline-block;
+    display: block;
     
     font-weight: 500;
     font-size: 34px;
@@ -185,6 +185,8 @@
     color: $Active-Link-Color;
 
     @media screen and (min-width: $tablet) {
+            padding-top: auto;
+            padding-bottom: auto;
             font-size: 12px;
             line-height: 14px;
             color: $Primary-Text-Color;
