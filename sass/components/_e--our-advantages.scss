@@ -1,8 +1,12 @@
-/* стилизация секции "Наши преимущества" */
-
 .advantages {
     @extend .default-lists;
-    // @extend .items-in-row;
+
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: calc(-1 * #{$Projects-Item-Gap});
+            margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+        }
 }
 
 .advantages__subtitle {
@@ -32,7 +36,16 @@
         background-repeat: no-repeat;
         background-position: center;
     }
+
+        @media screen and (min-width: $tablet) {
+            width: 354px;
+            flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+            margin-right: $Projects-Item-Gap;
+            margin-bottom: $Projects-Item-Gap;
+        }
+            
 }
+
 
 .advantages__icon {
     &--antenna::before {
