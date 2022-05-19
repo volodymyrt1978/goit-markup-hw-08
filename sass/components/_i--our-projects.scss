@@ -8,6 +8,10 @@
             margin-right: 8px;
             margin-bottom: 15px;
         }
+
+        @media screen and (min-width: $tablet) {
+            justify-content: center;
+        }
 }
 
 .filter-button {
@@ -40,15 +44,22 @@
 /* Стилизация секции "Наши проекты" */
 .projects {
     @extend .default-lists;
-    // display: flex;
-    // flex-wrap: wrap;
-    // margin-left: calc(-1 * #{$Projects-Item-Gap});
-    // /*- 6px если рамка у всей карточки*/
-    // margin-top: calc(-1 * #{$Projects-Item-Gap});
+    
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: calc(-1 * #{$Projects-Item-Gap});
+        }
 }
 
 .projects__item:not(:last-child) {
     margin-bottom: $Projects-Item-Gap;
+
+        @media screen and (min-width: $tablet) {
+            flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+                margin-right: $Projects-Item-Gap;
+                margin-bottom: $Projects-Item-Gap;
+        }
 }
 
 .link-active {
@@ -75,7 +86,11 @@
 
 .project__image {
     width: 450px;
-    height: 294px;
+    // height: 294px;
+        
+        @media screen and (min-width: $tablet) {
+            width: 354px;
+        }
 }
 
 .project__slider {
@@ -99,6 +114,10 @@
     transition-property: transform;
     transition-duration: $Animation-Duration;
     transition-timing-function: $Timing-Function;
+
+        @media screen and (min-width: $tablet) {
+            padding-top: 49px;
+        }
 }
 
 .link-active:hover .project__slider,
@@ -107,6 +126,7 @@
 }
 
 .projects__card-content {
+    
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 24px;
@@ -117,6 +137,7 @@
     border-bottom: 1px solid #EEEEEE;
 }
 
+
 .project__title {
     font-size: 18px;
     font-weight: 700;
@@ -125,11 +146,32 @@
     color: $Default-Text-Color;
 }
 
+.project__title--crutch {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: none;
+        
+    }
+}
+
 .project__brief {
     margin-top: 4px;
 
     font-size: 16px;
     line-height: 30px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
     color: $Primary-Text-Color;
+
+        &--crutch {
+            @extend .project__brief;
+            @media screen and (min-width: $tablet) and (max-width: 1199px) {
+                color: $Contrast-Text-Color;
+            }
+            
+        }
 }
 
