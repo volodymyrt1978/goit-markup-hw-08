@@ -1,6 +1,11 @@
 .footer {
     @extend .section;
     background-color: $Primary-Background-Color;
+
+        @media screen and (min-width: $desktop) {
+            padding-top: $Default-Mobile-Padding-Gap;
+            padding-bottom: $Default-Mobile-Padding-Gap;
+        }
 }
 
 .footer__container {
@@ -10,8 +15,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            
         }
+
+            @media screen and (min-width: $desktop) {
+                flex-wrap: nowrap;
+                align-items: baseline;
+                justify-content: space-between;
+                
+            }
 }
 
 .logo__link--footer {
@@ -19,6 +30,10 @@
     display: block;
     margin-bottom: 20px;
     text-align: center;
+
+        @media screen and (min-width: $desktop) {
+            text-align: left;
+        }
 }
 
 .address {
@@ -31,6 +46,11 @@
 
     &:last-child {
             margin-bottom: 0;
+        }
+
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 9px;
+            text-align: left;
         }
 }
 
@@ -58,6 +78,9 @@
             margin: 5px 0 0 0;
         }
     
+            @media screen and (min-width: $desktop) {
+                margin: 0;
+            }
 }
 
 .social-links__action {
@@ -69,12 +92,21 @@
     letter-spacing: 0.03em;
     
     margin-bottom: 20px;
+
+        @media screen and (min-width: $desktop) {
+            font-weight: bold;
+            text-align: left;
+        }
 }
 
 .link-box {
     @extend .default-lists;
     @extend .items-in-row;
     justify-content: center;
+
+        @media screen and (min-width: $desktop) {
+            justify-content: initial;
+        }
     
 }
 
@@ -93,6 +125,18 @@
     background-position: center;
     border-radius: 50%;
     
+        @media screen and (min-width: $desktop) {
+            cursor: pointer;
+            
+                transition-property: background-color;
+                transition-duration: $Animation-Duration;
+                transition-timing-function: $Timing-Function;
+            
+                &:hover,
+                &:focus {
+                    background-color: $Active-Link-Color;
+                }
+        }
 }
 
 .icon-insta {
@@ -118,6 +162,13 @@
         @media screen and (min-width: $tablet) {
             margin-top: 60px;
         }
+
+                @media screen and (min-width: $desktop) {
+                    margin: 0;
+                    &__form {
+                        display: flex;
+                    }
+                }
 }
 
 .signup__action {
@@ -130,6 +181,10 @@
     text-transform: uppercase;
 
     color: $Contrast-Text-Color;
+
+        @media screen and (min-width: $desktop) {
+            text-align: left;
+        }
 }
 
 .signup__input {
@@ -151,6 +206,11 @@
 
     &:focus {
             outline: 0;
+        }
+
+        @media screen and (min-width: $desktop) {
+            margin: 0 12px 0 0;
+            width: 358px;
         }
 
 }

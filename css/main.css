@@ -1579,6 +1579,13 @@ body {
   background-color: #2f303a;
 }
 
+@media screen and (min-width: 1200px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .footer__container {
     display: -webkit-box;
@@ -1591,10 +1598,29 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .logo__link--footer {
   display: block;
   margin-bottom: 20px;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .logo__link--footer {
+    text-align: left;
+  }
 }
 
 .address__item {
@@ -1604,6 +1630,13 @@ body {
 
 .address__item:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .address__item {
+    margin-bottom: 9px;
+    text-align: left;
+  }
 }
 
 .address__postal {
@@ -1629,6 +1662,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .social-links {
+    margin: 0;
+  }
+}
+
 .social-links__action {
   text-transform: uppercase;
   color: #FFFFFF;
@@ -1639,10 +1678,25 @@ body {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1200px) {
+  .social-links__action {
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
 .link-box {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .link-box {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
 }
 
 .link-box__item {
@@ -1658,6 +1712,21 @@ body {
 
 .link-box__item:last-child {
   margin-right: 0px;
+}
+
+@media screen and (min-width: 1200px) {
+  .link-box__item {
+    cursor: pointer;
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .link-box__item:hover, .link-box__item:focus {
+    background-color: #2196f3;
+  }
 }
 
 .icon-insta {
@@ -1686,6 +1755,17 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .signup {
+    margin: 0;
+  }
+  .signup__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .signup__action {
   margin-bottom: 20px;
   font-weight: 700;
@@ -1694,6 +1774,12 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: white;
+}
+
+@media screen and (min-width: 1200px) {
+  .signup__action {
+    text-align: left;
+  }
 }
 
 .signup__input {
@@ -1713,6 +1799,13 @@ body {
 
 .signup__input:focus {
   outline: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .signup__input {
+    margin: 0 12px 0 0;
+    width: 358px;
+  }
 }
 
 .signup__button {
