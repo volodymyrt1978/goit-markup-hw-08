@@ -7,7 +7,9 @@
     @extend .container;
     @extend .items-in-row;
 
-  
+        @media screen and (min-width: $tablet) {
+            position: static;
+        }
 }
 
 .navigation-section {
@@ -21,7 +23,7 @@
 
 .menu-container {
     display: none;
-    position: absolute;
+    position: absolute; 
     z-index: 1;
     top: 0;
     left: 0;
@@ -43,6 +45,10 @@
             margin-left: 88px;
             padding: 0;
         }
+
+            @media screen and (min-width: $desktop) {
+                margin-left: 93px;
+            }
 }
 
 .menu-button {
@@ -79,9 +85,6 @@
         }
 }
 
-
-
-
 .logo__link--header {
     display: block;
     padding-top: 16px;
@@ -92,6 +95,11 @@
         padding-top: 26px;
         padding-bottom: 26px;
     }
+
+        @media screen and (min-width: $desktop) {
+            padding-top: 24px;
+            padding-bottom: 25px;
+        }
 }
 
 .site-nav {
@@ -110,10 +118,11 @@
 
 .site-nav__link {
     @extend .default-links;
-
+    display: block;
     font-weight: 500;
     font-size: 40px;
     line-height: 47px;
+    color: $Default-Text-Color;
     letter-spacing: 0.02em;
 
     &--active {
@@ -147,6 +156,17 @@
                     }
             }
         }
+
+            @media screen and (min-width: $desktop) {
+                transition-property: color;
+                    transition-duration: $Animation-Duration;
+                    transition-timing-function: $Timing-Function;
+                
+                    &:hover,
+                    &:focus {
+                        color: $Active-Link-Color;
+                    }
+            }
 }
 
 .contacts {
@@ -170,42 +190,79 @@
                 }
         }
 
+            @media screen and (min-width: $desktop) {
+                flex-direction: row;
+                margin-left: 305px;
+                &__item:not(:first-child) {
+                        margin-top: 0;
+                        margin-left: $Projects-Item-Gap;
+                    }
+            }
 }
 
-.contacts__link--phone {
+%contacts__link {
     @extend .default-links;
     display: block;
     
     font-weight: 500;
+    letter-spacing: 0.02em;
+
+    transition-property: color;
+        transition-duration: $Animation-Duration;
+        transition-timing-function: $Timing-Function;
+}
+
+.contacts__link--phone {
+    @extend %contacts__link;
+    
     font-size: 34px;
     line-height: 40px;
-    letter-spacing: 0.02em;
+    
     color: $Active-Link-Color;
 
-    @media screen and (min-width: $tablet) {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            line-height: 14px;
-            color: $Primary-Text-Color;
-        }
+        @media screen and (min-width: $tablet) {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                line-height: 14px;
+                color: $Primary-Text-Color;
+            }
+
+                @media screen and (min-width: $desktop) {
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding-top: 32px;
+                    padding-bottom: 32px;
+                    &:hover, &:focus {
+                            color: $Active-Link-Color;
+                        }
+                }
 }
 
 .contacts__link--mail {
-    @extend .default-links;
-    display: block;
-    font-weight: 500;
+    @extend %contacts__link;
+    
     font-size: 24px;
     line-height: 28px;
-    letter-spacing: 0.02em;
+    
     color: $Primary-Text-Color;
 
-    @media screen and (min-width: $tablet) {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            line-height: 14px;
-        }
+        @media screen and (min-width: $tablet) {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+                @media screen and (min-width: $desktop) {
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding-top: 32px;
+                    padding-bottom: 32px;
+                    &:hover, &:focus {
+                            color: $Active-Link-Color;
+                        }
+            }
 }
 
 %nav__icon {
@@ -226,7 +283,12 @@
             display: none;
         }
 
-
+        @media screen and (min-width: $desktop) {
+            width: 16px;
+            height: 12px;
+            margin-right: 10px;
+            
+        }
 }
 
 .nav__icon--phone {
@@ -238,6 +300,33 @@
     @media screen and (max-width: 767px) {
             display: none;
         }
+
+        @media screen and (min-width: $desktop) {
+            height: 16px;
+            margin-right: 10px;
+            &:hover, &:focus {
+                    fill: $Active-Link-Color;
+                }
+        }
+}
+
+@media screen and (min-width: $desktop) {
+
+.contacts__link--mail:hover,
+.contacts__link--mail:focus {
+
+    .nav__icon--mail {
+        fill: $Active-Link-Color;
+    }
+}
+
+.contacts__link--phone:hover,
+.contacts__link--phone:focus {
+
+    .nav__icon--phone {
+        fill: $Active-Link-Color;
+    }
+}
 }
 
 .slinkbox-mobile {
