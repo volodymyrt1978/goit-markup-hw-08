@@ -1,6 +1,10 @@
 .services {
     display: none;
     padding-top:0;
+
+    @media screen and (min-width: $desktop) {
+        display: inherit;
+    }
 }
 
 .application {

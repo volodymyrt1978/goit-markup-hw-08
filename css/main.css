@@ -1091,6 +1091,12 @@ body {
   padding-top: 0;
 }
 
+@media screen and (min-width: 1200px) {
+  .services {
+    display: inherit;
+  }
+}
+
 .application {
   display: -webkit-box;
   display: -ms-flexbox;
