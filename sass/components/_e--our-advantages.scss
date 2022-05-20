@@ -1,12 +1,17 @@
 .advantages {
     @extend .default-lists;
 
-        @media screen and (min-width: $tablet) {
-            display: flex;
-            flex-wrap: wrap;
-            margin-right: calc(-1 * #{$Projects-Item-Gap});
-            margin-bottom: calc(-1 * #{$Projects-Item-Gap});
-        }
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: calc(-1 * #{$Projects-Item-Gap});
+        margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+    }
+
+    @media screen and (min-width: $desktop) {
+        flex-wrap: nowrap;
+        margin: 0;
+    }
 }
 
 .advantages__subtitle {
@@ -19,10 +24,14 @@
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: $Default-Text-Color;
+
+    @media screen and (min-width: $desktop) {
+        text-align: left;
+    }
 }
 
 .advantages__item {
-    
+
     &:not(:last-child) {
         margin-bottom: 30px;
     }
@@ -31,18 +40,30 @@
         content: "";
         display: block;
         height: 120px;
-    
+
         background-color: #F5F4FA;
         background-repeat: no-repeat;
         background-position: center;
     }
 
-        @media screen and (min-width: $tablet) {
-            flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
-            margin-right: $Projects-Item-Gap;
-            margin-bottom: $Projects-Item-Gap;
-        }
-            
+    @media screen and (min-width: $tablet) {
+        flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+        margin-right: $Projects-Item-Gap;
+        margin-bottom: $Projects-Item-Gap;
+    }
+
+    @media screen and (min-width: $desktop) {
+        flex-basis: content;
+        margin: 0;
+        p {
+                width: 270px;
+            }
+        &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: 30px;
+            }
+    }
+
 }
 
 

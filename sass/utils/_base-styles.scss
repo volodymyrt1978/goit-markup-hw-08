@@ -54,6 +54,11 @@ img {
 .section {
     padding-top: $Default-Mobile-Padding-Gap;
     padding-bottom: $Default-Mobile-Padding-Gap;
+
+    @media screen and (min-width: $desktop) {
+        padding-top: $Default-Padding-Gap;
+        padding-bottom: $Default-Padding-Gap;
+    }
 }
 
 /* убираем маркеры в списках*/

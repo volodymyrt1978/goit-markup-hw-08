@@ -64,6 +64,13 @@ img {
   padding-bottom: 60px;
 }
 
+@media screen and (min-width: 1200px) {
+  .section, .teamsection, .footer {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
 /* убираем маркеры в списках*/
 .default-lists, .site-nav, .contacts, .slinkbox-mobile, .advantages, .application, .team, .nets, .clients, .button-list, .projects, .address, .link-box {
   list-style: none;
@@ -1001,6 +1008,14 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .advantages {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin: 0;
+  }
+}
+
 .advantages__subtitle {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -1010,6 +1025,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: #212121;
+}
+
+@media screen and (min-width: 1200px) {
+  .advantages__subtitle {
+    text-align: left;
+  }
 }
 
 .advantages__item:not(:last-child) {
@@ -1031,6 +1052,21 @@ body {
         flex-basis: calc(100%/2 - 30px);
     margin-right: 30px;
     margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .advantages__item {
+    -ms-flex-preferred-size: content;
+        flex-basis: content;
+    margin: 0;
+  }
+  .advantages__item p {
+    width: 270px;
+  }
+  .advantages__item:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 30px;
   }
 }
 
