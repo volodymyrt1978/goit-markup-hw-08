@@ -97,4 +97,10 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     color: $Default-Text-Color;
+
+        @media screen and (min-width: $desktop) {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 42px;
+        }
 }
