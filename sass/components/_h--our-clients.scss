@@ -1,11 +1,13 @@
 .clients {
-    @extend .default-lists; 
+    @extend .default-lists;
     @extend .items-in-row;
     flex-wrap: wrap;
-    
+    justify-content: center;
     margin-top: 30px;
-    margin-right: calc(-1 * #{$Projects-Item-Gap});
-    margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+    
+            // margin-right: calc(-1 * #{$Projects-Item-Gap});
+            // margin-bottom: calc(-1 * #{$Projects-Item-Gap});
+            
 
         @media screen and (min-width: $desktop) {
             flex-wrap: nowrap;
@@ -14,10 +16,14 @@
 }
 
 .clients__item {
-    flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
-    margin-right: $Projects-Item-Gap;
     margin-bottom: $Projects-Item-Gap;
+    &:nth-child(2n) {margin-right: 0;}
+    &:nth-last-child(-n+2) {margin-bottom: 0;}
 
+    flex-basis: calc(100%/2 - #{$Projects-Item-Gap});
+            margin-right: $Projects-Item-Gap;
+            margin-bottom: $Projects-Item-Gap;
+        
         @media screen and (min-width: $tablet) {
             flex-basis: calc(100%/3 - #{$Projects-Item-Gap});
         }
@@ -40,8 +46,8 @@
     align-content: center;
     justify-content: center;
 
-    width: 210px;
-    height: 92px;
+    max-width: 210px;
+    max-height: 92px;
 
     color: #AFB1B8;
 
@@ -66,7 +72,7 @@
 }
 
 .clients__logo {
-    width: 106px;
-    height: 60px;
+    max-width: 106px;
+    max-height: 60px;
     fill: currentColor;
 }

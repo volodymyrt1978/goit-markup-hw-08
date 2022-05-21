@@ -215,10 +215,14 @@
 .contacts__link--phone {
     @extend %contacts__link;
     
-    font-size: 34px;
-    line-height: 40px;
-    
+    font-size: 27px;
+    line-height: 1.18;
+        
     color: $Active-Link-Color;
+
+        @media screen and (min-width: 377px) {
+            font-size: 34px;
+        }
 
         @media screen and (min-width: $tablet) {
                 display: flex;
@@ -332,10 +336,15 @@
 .slinkbox-mobile {
     @extend .default-lists;
     @extend .items-in-row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
 
     &__item:not(:last-child) {
         position: relative;
         margin-right: 20px;
+        margin-bottom: 20px;
 
         &:after {
             content: "";
@@ -358,6 +367,7 @@
         font-size: 18px;
         line-height: 22px;
         letter-spacing: 0.02em;
+        text-align: center;
     
         color: $Active-Link-Color;
     }
