@@ -1857,6 +1857,10 @@ body {
   background-image: url("../images/linkedin-footer.svg");
 }
 
+.signup__form {
+  width: 450px;
+}
+
 .signup {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1906,7 +1910,7 @@ body {
   display: block;
   margin-bottom: 20px;
   padding: 15px 16px 15px 16px;
-  max-width: 450px;
+  width: 100%;
   font-size: 16px;
   line-height: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
