@@ -29,6 +29,7 @@
     left: 0;
     width: 100%;
     
+    
     background-color: #FFFFFF;
     padding: 48px 40px 48px 40px;
     
@@ -215,16 +216,17 @@
 .contacts__link--phone {
     @extend %contacts__link;
     
-    font-size: 27px;
+    font-size: calc(20px + 2vw);
     line-height: 1.18;
+    
         
     color: $Active-Link-Color;
 
-        @media screen and (min-width: 377px) {
+        @media screen and (min-width: $mobile) {
             font-size: 34px;
         }
 
-        @media screen and (min-width: $tablet) {
+            @media screen and (min-width: $tablet) {
                 display: flex;
                 align-items: center;
                 font-size: 12px;
@@ -336,15 +338,13 @@
 .slinkbox-mobile {
     @extend .default-lists;
     @extend .items-in-row;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+    overflow-wrap: anywhere;
 
 
     &__item:not(:last-child) {
         position: relative;
         margin-right: 20px;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
 
         &:after {
             content: "";

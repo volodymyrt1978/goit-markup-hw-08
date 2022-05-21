@@ -32,7 +32,7 @@
     
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.7);
 
     width: 450px;
     padding: 40px;
@@ -44,9 +44,25 @@
     transition-duration: $Animation-Duration;
     transition-timing-function: $Timing-Function;
 
-        @media screen and (min-width: $desktop) {
-            width: 528px;
-        }
+                @media screen and (min-width: 360px) {
+                    transform: translate(-50%, -50%) scale(0.78);
+                }
+
+                    @media screen and (min-width: 400px) {
+                        transform: translate(-50%, -50%) scale(0.85);
+                    }
+
+                        @media screen and (min-width: 440px) {
+                            transform: translate(-50%, -50%) scale(0.95);
+                        }
+
+                            @media screen and (min-width: $mobile) {
+                                transform: translate(-50%, -50%) scale(1);
+                            }
+
+                                @media screen and (min-width: $desktop) {
+                                    width: 528px;
+                                }
 
 }
 

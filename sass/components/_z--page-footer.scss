@@ -155,15 +155,13 @@
     background-image: url("../images/linkedin-footer.svg");
 }
 
-.signup__form {
-   width: 450px;
-}
-
 .signup {
     display: flex;        
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
+    
     
 
         @media screen and (min-width: $tablet) {
@@ -214,6 +212,10 @@
 
     &:focus {
             outline: 0;
+        }
+
+        @media screen and (min-width: $tablet) {
+            width: 450px;
         }
 
         @media screen and (min-width: $desktop) {
