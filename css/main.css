@@ -1549,6 +1549,47 @@ body {
   }
 }
 
+.project__image--mobile {
+  width: 450px;
+  height: 294px;
+}
+
+@media screen and (min-width: 768px) {
+  .project__image--mobile {
+    display: none;
+  }
+}
+
+.project__image--tablet {
+  width: 354px;
+  height: 294px;
+}
+
+@media screen and (max-width: 767px) {
+  .project__image--tablet {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project__image--tablet {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .project__image--desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project__image--desktop {
+    width: 370px;
+    height: 294px;
+  }
+}
+
 .project__slider {
   position: absolute;
   top: 0;

@@ -119,6 +119,41 @@
             }
 }
 
+.project__image--mobile {
+    width: 450px;
+    height: 294px;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.project__image--tablet {
+    width: 354px;
+    height: 294px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
+
+}
+
+.project__image--desktop {
+    @media screen and (max-width:1199px) {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 370px;
+        height: 294px;
+    }
+
+}
+
 .project__slider {
     position: absolute;
     top: 0;
