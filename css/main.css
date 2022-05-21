@@ -1201,20 +1201,42 @@ body {
   }
 }
 
-.team__image {
+.team__image--mobile {
   width: 450px;
   height: 460px;
 }
 
 @media screen and (min-width: 768px) {
-  .team__image {
-    width: 354px;
-    height: 374px;
+  .team__image--mobile {
+    display: none;
+  }
+}
+
+.team__image--tablet {
+  width: 354px;
+  height: 374px;
+}
+
+@media screen and (max-width: 767px) {
+  .team__image--tablet {
+    display: none;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .team__image {
+  .team__image--tablet {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .team__image--desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team__image--desktop {
     width: 270px;
     height: 260px;
   }

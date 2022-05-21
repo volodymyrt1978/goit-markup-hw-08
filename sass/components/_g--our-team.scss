@@ -50,20 +50,39 @@
                     }
 }
 
-.team__image {
+.team__image--mobile {
     width: 450px;
     height: 460px;
-
-        @media screen and (min-width: $tablet) {
-            width: 354px;
-            height: 374px;
-        }
-
-            @media screen and (min-width: $desktop) {
-                width: 270px;
-                height: 260px;
-            }
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
 }
+
+.team__image--tablet {
+    width: 354px;
+    height: 374px;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
+
+}
+
+.team__image--desktop {
+    @media screen and (max-width:1199px) {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 270px;
+        height: 260px;
+    }
+        
+}
+
 
 .card {
     padding-top: $Projects-Item-Gap;
