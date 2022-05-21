@@ -430,9 +430,15 @@ body {
 }
 
 .contacts__link--mail {
-  font-size: 24px;
-  line-height: 28px;
+  font-size: calc(14px + 2vw);
+  line-height: 1.17;
   color: #757575;
+}
+
+@media screen and (min-width: 480px) {
+  .contacts__link--mail {
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -523,10 +529,6 @@ body {
   }
 }
 
-.slinkbox-mobile {
-  overflow-wrap: anywhere;
-}
-
 .slinkbox-mobile__item:not(:last-child) {
   position: relative;
   margin-right: 20px;
@@ -544,12 +546,25 @@ body {
 }
 
 .slinkbox-mobile__link {
+  padding: 30px 5px 30px 5px;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: calc(7px + 1vw);
+  line-height: 1.22;
   letter-spacing: 0.02em;
   text-align: center;
   color: #2196f3;
+}
+
+@media screen and (min-width: 400px) {
+  .slinkbox-mobile__link {
+    font-size: calc(7px + 2vw);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .slinkbox-mobile__link {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1844,12 +1859,11 @@ body {
 .link-box__item {
   margin-right: 10px;
   margin-bottom: 0px;
-  width: 44px;
-  height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .link-box__item:last-child {
@@ -1858,7 +1872,6 @@ body {
 
 @media screen and (min-width: 1200px) {
   .link-box__item {
-    cursor: pointer;
     -webkit-transition-property: background-color;
     transition-property: background-color;
     -webkit-transition-duration: 250ms;
@@ -1869,6 +1882,12 @@ body {
   .link-box__item:hover, .link-box__item:focus {
     background-color: #2196f3;
   }
+}
+
+.link-box__link {
+  display: block;
+  width: 44px;
+  height: 44px;
 }
 
 .icon-insta {

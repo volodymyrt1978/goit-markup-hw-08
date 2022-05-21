@@ -113,9 +113,7 @@
 .link-box__item {
     margin-right: 10px;
     margin-bottom: 0px;
-    width: 44px;
-    height: 44px;
-
+    
     &:last-child {
             margin-right: 0px;
         }
@@ -124,9 +122,9 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-    
+    cursor: pointer;
+        
         @media screen and (min-width: $desktop) {
-            cursor: pointer;
             
                 transition-property: background-color;
                 transition-duration: $Animation-Duration;
@@ -137,6 +135,12 @@
                     background-color: $Active-Link-Color;
                 }
         }
+}
+
+.link-box__link {
+    display: block;
+    width: 44px;
+    height: 44px;
 }
 
 .icon-insta {
