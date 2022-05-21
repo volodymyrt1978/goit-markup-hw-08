@@ -1532,23 +1532,6 @@ body {
   overflow: hidden;
 }
 
-.project__image {
-  width: 450px;
-  height: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .project__image {
-    width: 354px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .project__image {
-    width: 370px;
-  }
-}
-
 .project__image--mobile {
   width: 450px;
   height: 294px;
