@@ -1203,7 +1203,7 @@ body {
 
 .team__image--mobile {
   width: 450px;
-  height: 460px;
+  max-height: 460px;
 }
 
 @media screen and (min-width: 768px) {
