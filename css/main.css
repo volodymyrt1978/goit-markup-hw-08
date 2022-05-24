@@ -176,7 +176,7 @@ body {
 
 .menu-container {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
@@ -230,6 +230,10 @@ body {
 
 .menu-button__icon--close {
   display: none;
+}
+
+.menu-button.is-open {
+  position: fixed;
 }
 
 .menu-button.is-open .menu-button__icon--close {
@@ -340,7 +344,6 @@ body {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-  margin-top: 302px;
   margin-bottom: 64px;
 }
 

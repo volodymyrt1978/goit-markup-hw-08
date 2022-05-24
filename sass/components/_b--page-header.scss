@@ -23,13 +23,12 @@
 
 .menu-container {
     display: none;
-    position: absolute; 
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
-    
-    
+
     background-color: #FFFFFF;
     padding: 48px 40px 48px 40px;
     
@@ -37,7 +36,7 @@
         display: block;
     }
 
-        @media screen and (min-width: $tablet) {
+           @media screen and (min-width: $tablet) {
             display: flex;
             align-items: center;
             position: static;
@@ -51,6 +50,8 @@
                 margin-left: 93px;
             }
 }
+
+
 
 .menu-button {
     
@@ -73,8 +74,13 @@
         display: none;
     }
 
+    &.is-open {
+        position: fixed;
+    }
+
     &.is-open &__icon--close {
         display: block;
+        
     }
 
     &.is-open &__icon--open {
@@ -174,7 +180,7 @@
     @extend .default-lists;
     display: flex;
     flex-direction: column-reverse;
-    margin-top: 302px;
+    // margin-top: 302px;
     margin-bottom: 64px;
 
     &__item:not(:first-child) {
